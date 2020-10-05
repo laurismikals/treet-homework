@@ -33,7 +33,7 @@ export const Header = () => {
   const opacity = pathname === ROUTES.HOME ? Math.min(scroll * 100 / 500 / 100, 1) : 1;
 
   return (
-    <header className={styles.root} style={{ backgroundColor: `rgba(124, 79, 224, ${opacity})` }}>
+    <header className={styles.root} style={{ backgroundColor: `rgba(172, 138, 37, ${opacity})` }}>
       <Container>
         <div className={styles.content}>
           <Link to={ROUTES.HOME} className={styles.link}>

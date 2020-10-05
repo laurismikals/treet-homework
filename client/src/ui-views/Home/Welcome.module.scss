@@ -50,7 +50,6 @@
   $padding: 1.5rem;
   $height: 3.5rem;
 
-  display: flex;
   height: $height;
   padding-left: $padding;
   padding-right: $padding;
@@ -68,7 +67,7 @@
 
   &:hover, &:focus {
     text-decoration: none;
-    background: linear-gradient(-47deg, #8731E8 0%, #4528DC 100%);
+    background: linear-gradient(-47deg, darken($electricPurple, 10) 0%, lighten($electricPurple, 10) 100%);
     color: $pearlWhite;
   }
 

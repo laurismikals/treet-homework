@@ -1,0 +1,26 @@
+@import '../../css/00-settings/colors.scss';
+
+$height: 150px;
+
+.root {
+  border-style: solid;
+  border-width: 1px;
+  border-color: $darkGray;
+  background-color: $lightGray;
+  width: $height;
+  height: $height;
+  border-radius: $height;
+  transition: background-color 0.3s;
+
+  &:hover, &:focus {
+    background-color: lighten($electricPurple, 20);
+  }
+
+  &.isSelected {
+    background-color: lighten($electricPurple, 15);
+
+    &:hover, &:focus {
+      background-color: lighten($electricPurple, 15);
+    }
+  }
+}

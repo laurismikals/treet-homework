@@ -1,8 +1,8 @@
 @import './border-radius.scss';
 @import './colors.scss';
 
-$inputHeight: 36px;
-$inputTextIndent: 12px;
+$inputHeight: 3rem;
+$inputTextIndent: 0.8rem;
 $inputBackgroundColor: $pearlWhite;
 
 @mixin inputBorder {
