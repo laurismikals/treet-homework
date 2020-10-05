@@ -1,0 +1,63 @@
+@import '../../css/00-settings/colors';
+
+.root {
+  margin: 0;
+
+  :global {
+    & .DayPicker-wrapper {
+      padding-bottom: 0;
+    }
+
+    & .DayPicker-Caption {
+      width: 200px;
+    }
+
+    & .DayPicker-NavButton {
+      top: 0;
+      right: 0;
+    }
+
+    & .DayPicker-Months {
+      display: grid;
+      grid-gap: 1rem 1rem;
+
+      @media only screen and (min-width: 581px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    & .DayPicker-Month {
+      margin: 0;
+    }
+
+    & .DayPicker-Day {
+      transition: background-color 0.2s, color 0.2s;
+      border-radius: 0;
+    }
+
+    & .DayPicker-Day--disabled {
+      color: lighten($ivoryGray, 20);
+    }
+
+    & .DayPicker-Day--today {
+      color: $electricPurple;
+    }
+
+    & .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside){
+      background-color: $electricPurple;
+
+      &:hover {
+        background-color: lighten($electricPurple, 8);
+      }
+
+      &:active, &:focus {
+        background-color: lighten($electricPurple, 10);
+      }
+    }
+
+    & .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+      background-color: $electricPurple;
+      color: $pearlWhite;
+    }
+  }
+}

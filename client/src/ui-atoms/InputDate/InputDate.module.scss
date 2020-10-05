@@ -1,0 +1,11 @@
+@import '../../css/00-settings/input.scss';
+
+.root {
+  @include inputBase;
+  @include inputText;
+
+  padding-left: $inputTextIndent;
+  padding-right: $inputTextIndent;
+  text-align: start;
+  white-space: nowrap;
+}

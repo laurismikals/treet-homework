@@ -1,0 +1,36 @@
+@import '../../css/00-settings/border-radius.scss';
+@import '../../css/00-settings/colors.scss';
+
+$padding: 1rem 1rem;
+
+.root {
+  background-color: $pearlWhite;
+  border-radius: $borderRadius;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: lighten($darkGray, 3);
+  padding: $padding;
+}
+
+.close {
+  border: 0;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 9px;
+  color: $ivoryGray;
+}
+
+.content {
+  padding: $padding;
+}

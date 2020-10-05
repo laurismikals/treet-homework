@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import { ROUTES } from '../../constants/routes';
 
 import styles from './Welcome.module.scss';
 
@@ -16,9 +19,9 @@ export const Welcome = () => (
     </div>
       <div className={styles.content}>
         <h1 className={styles.heading}>Treat yourself with a <br/> chocolate cake</h1>
-        <a className={styles.link} href="#">
+        <Link className={styles.link} to={ROUTES.BOOK_TABLE}>
           BOOK A TABLE!
-        </a>
+        </Link>
       </div>
   </section>
 );
