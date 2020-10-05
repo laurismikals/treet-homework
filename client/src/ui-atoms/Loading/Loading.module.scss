@@ -11,10 +11,10 @@
   position: absolute;
   width: 1em;
   height: 1em;
-  border: 3px solid $electricPurple;
+  border: 3px solid $tastyYellow;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: $electricPurple transparent transparent transparent;
+  border-color: $tastyYellow transparent transparent transparent;
 }
 .root div:nth-child(1) {
   animation-delay: -0.45s;

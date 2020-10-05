@@ -40,23 +40,23 @@
     }
 
     & .DayPicker-Day--today {
-      color: $electricPurple;
+      color: $tastyYellow;
     }
 
     & .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside){
-      background-color: $electricPurple;
+      background-color: $tastyYellow;
 
       &:hover {
-        background-color: lighten($electricPurple, 8);
+        background-color: lighten($tastyYellow, 8);
       }
 
       &:active, &:focus {
-        background-color: lighten($electricPurple, 10);
+        background-color: lighten($tastyYellow, 10);
       }
     }
 
     & .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
-      background-color: $electricPurple;
+      background-color: $tastyYellow;
       color: $pearlWhite;
     }
   }

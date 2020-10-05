@@ -13,14 +13,14 @@ $height: 150px;
   transition: background-color 0.3s;
 
   &:hover, &:focus {
-    background-color: lighten($electricPurple, 20);
+    background-color: lighten($tastyYellow, 20);
   }
 
   &.isSelected {
-    background-color: lighten($electricPurple, 15);
+    background-color: lighten($tastyYellow, 15);
 
     &:hover, &:focus {
-      background-color: lighten($electricPurple, 15);
+      background-color: lighten($tastyYellow, 15);
     }
   }
 }
