@@ -1,0 +1,28 @@
+@import '../../css/00-settings/colors.scss';
+
+.root {
+  position: relative;
+  height: 700px;
+  background: rgba(0, 0, 0, 0) url(cake.jpg) no-repeat scroll center center / cover;
+  margin-bottom: 2rem;
+}
+
+.colorfulOverlay {
+  background: linear-gradient(0deg, rgba($electricPurple, 0.9) 0%, $electricPurple 100%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.shape {
+  position: absolute;
+  top: auto;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+}
+
+.content {
+  position: relative;
+  padding-top: 5rem;
+}

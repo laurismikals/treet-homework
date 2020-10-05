@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, lazy } from 'react';
 
-function App() {
+import { Header } from './ui-layout/Header/Header';
+import { Main } from './ui-layout/Main/Main';
+import { Footer } from './ui-layout/Footer/Footer';
+
+import { Loading } from './ui-atoms/Loading/Loading';
+
+const Home = lazy(() => import('./ui-views/Home/Home'));
+
+const SuspenseFallback = () => (
+  <div
+    style={{
+      width: '100%',
+      marginTop: 24,
+      display: 'flex',
+      justifyContent: 'center',
+    }}
+  >
+    <Loading size={30} />
+  </div>
+);
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Main>
+        <Suspense fallback={<SuspenseFallback />}>
+          <Home />
+        </Suspense>
+      </Main>
+      <Footer>
+        footer
+      </Footer>
+    </>
   );
 }
-
-export default App;

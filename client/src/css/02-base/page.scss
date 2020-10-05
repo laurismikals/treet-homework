@@ -1,0 +1,34 @@
+@import '../00-settings/colors.scss';
+
+@mixin dimensions {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  @include dimensions;
+}
+
+body {
+  @include dimensions;
+
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 100%; // 16px
+  line-height: 1.3;
+  color: $darkGray;
+  background-color: $pearlWhite;
+
+  overflow-y: scroll;
+}
+
+.site {
+  @include dimensions;
+
+  display: flex;
+  flex-direction: column;
+}

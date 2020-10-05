@@ -1,0 +1,48 @@
+@import '../00-settings/colors.scss';
+
+p, h1, h2, h3, h4, h5, h6, ul, ol, li, label {
+  margin: 0;
+}
+
+ul, ol {
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+select,
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=tel],
+input[type=number],
+input[type=search],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  color: $skyBlue;
+  transition: color 0.3s;
+
+  &:hover {
+    color: lighten($skyBlue, 8);
+  }
+}
