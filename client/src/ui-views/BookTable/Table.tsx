@@ -3,6 +3,8 @@ import classNames from 'classnames';
 
 import styles from './Table.module.scss';
 
+import { Spacer } from '../../ui-atoms/Spacer/Spacer';
+
 type Props = {
   name: string;
   isSelected: boolean;
@@ -15,6 +17,9 @@ export const Table: FC<Props> = ({ name, isSelected, onClick }) => (
     className={classNames(styles.root, { [styles.isSelected]: isSelected })}
     onClick={onClick}
   >
-    {name}
+    <Spacer column>
+      {name}
+      Available
+    </Spacer>
   </button>
 );
