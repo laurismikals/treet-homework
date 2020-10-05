@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Container } from '../../ui-atoms/Container/Container';
-
 import styles from './Welcome.module.scss';
 
 export const Welcome = () => (
@@ -16,10 +14,11 @@ export const Welcome = () => (
         </g>
       </svg>
     </div>
-    <Container>
       <div className={styles.content}>
-        Content
+        <h1 className={styles.heading}>Treat yourself with a <br/> chocolate cake</h1>
+        <a className={styles.link} href="#">
+          BOOK A TABLE!
+        </a>
       </div>
-    </Container>
   </section>
 );

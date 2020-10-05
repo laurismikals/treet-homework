@@ -1,0 +1,47 @@
+@import './border-radius.scss';
+@import './colors.scss';
+
+$inputHeight: 36px;
+$inputTextIndent: 12px;
+$inputBackgroundColor: $darkGray;
+
+@mixin inputBorder {
+  border-radius: $borderRadius;
+  border-width: 1px;
+  border-color: lighten($darkGray, 9);
+  border-style: solid;
+}
+
+@mixin inputText {
+  color: $ivoryGray;
+  line-height: 1.3;
+}
+
+@mixin inputTransition {
+  transition:
+    border-color 0.3s,
+    color 0.3s,
+    background-color 0.3s;
+}
+
+@mixin inputDimensions {
+  width: 100%;
+  height: $inputHeight;
+}
+
+@mixin inputBase {
+  @include inputDimensions;
+  @include inputBorder;
+  @include inputTransition;
+
+  background-color: $inputBackgroundColor;
+
+  &:hover, &:focus {
+    border-color: $mouseGray;
+  }
+
+  &:disabled {
+    border-color: lighten($darkGray, 9);
+    color: rgba($ivoryGray, 0.5);
+  }
+}

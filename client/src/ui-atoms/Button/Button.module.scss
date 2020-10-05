@@ -1,0 +1,46 @@
+@import '../../css/00-settings/input.scss';
+@import '../../css/00-settings/border-radius.scss';
+@import '../../css/00-settings/colors.scss';
+
+$padding: 1.5rem;
+
+.root {
+  height: $inputHeight;
+  padding-left: $padding;
+  padding-right: $padding;
+  border-radius: $inputHeight;
+  border-width: 1px;
+  border-style: solid;
+  border-color: lighten($electricPurple, 3);
+  background-color: $electricPurple;
+  color: $pearlWhite;
+  white-space: nowrap;
+  transition: filter 0.3s, background-color 0.3s, color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+
+  &:hover, &:focus {
+    filter: brightness(1.1);
+  }
+
+  &:active, &.active {
+    filter: brightness(1.3);
+  }
+
+  &:disabled {
+    filter: brightness(0.75);
+
+    &:active, &:focus, &.active {
+      filter: brightness(0.75);
+    }
+  }
+}
+
+.primary {
+  border-style: solid;
+  border-color: lighten($electricPurple, 5);
+  background-color: $electricPurple;
+  color: $pearlWhite;
+}
