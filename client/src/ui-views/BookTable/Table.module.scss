@@ -1,8 +1,8 @@
 @import '../../css/00-settings/colors.scss';
 
-$height: 150px;
-
 .root {
+  $height: 100px;
+
   border-style: solid;
   border-width: 1px;
   border-color: $darkGray;
@@ -22,5 +22,13 @@ $height: 150px;
     &:hover, &:focus {
       background-color: lighten($tastyYellow, 15);
     }
+  }
+
+  @media only screen and (min-width: 581px) {
+    $height: 150px;
+
+    width: $height;
+    height: $height;
+    border-radius: $height;
   }
 }
