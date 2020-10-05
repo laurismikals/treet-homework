@@ -16,7 +16,7 @@ export const InputCalendar: FC<Props> = ({
   <Calendar
     month={value.toDate()}
     toMonth={new Date()}
-    disabledDays={{ after: new Date() }}
+    disabledDays={{ before: new Date() }}
     selectedDays={value.toDate()}
     onDayClick={(day, modifiers) => {
       if (modifiers.disabled) { return; }
