@@ -1,0 +1,26 @@
+@import '../../css/00-settings/colors.scss';
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+}
+
+.link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: $pearlWhite;
+  background-color: transparent;
+  width: 100%;
+  margin-left: 1rem;
+}
+
+.link:hover, .link:focus, .active {
+  text-decoration: underline;
+  color: $pearlWhite;
+}

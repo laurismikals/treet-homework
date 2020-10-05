@@ -9,6 +9,8 @@ import styles from './Header.module.scss';
 
 import { ROUTES } from '../../constants/routes';
 
+import { Navigation } from '../Navigation/Navigation';
+
 const useScrollPosition = () => {
   const [scroll, setScroll] = useState(0);
 
@@ -39,6 +41,7 @@ export const Header = () => {
           <Link to={ROUTES.HOME} className={styles.link}>
             <Logo />
           </Link>
+          <Navigation />
         </div>
       </Container>
     </header>
