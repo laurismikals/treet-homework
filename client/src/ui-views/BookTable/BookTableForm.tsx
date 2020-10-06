@@ -56,7 +56,7 @@ const InnerForm: FC<FormikProps<FormValues>> = ({
           )}
         />
         <Spacer column verticalSpace={6}>
-          <Label isRequired>Select a table</Label>
+          <Label isRequired>Choose a table</Label>
           <Tables
             value={values[FIELD.TABLE]}
             onClick={(val) => setFieldValue(FIELD.TABLE, val)}
