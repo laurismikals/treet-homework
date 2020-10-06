@@ -8,6 +8,7 @@ import { Main } from './ui-layout/Main/Main';
 import { Footer } from './ui-layout/Footer/Footer';
 
 import { Loading } from './ui-atoms/Loading/Loading';
+import { Toast } from './ui-atoms/Toast/Toast';
 
 const BookTable = lazy(() => import('./ui-views/BookTable/BookTable'));
 const Home = lazy(() => import('./ui-views/Home/Home'));
@@ -44,6 +45,7 @@ export const App = () => {
       <Footer>
         footer
       </Footer>
+      <Toast />
     </>
   );
 }
