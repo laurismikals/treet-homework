@@ -53,14 +53,16 @@ const InnerForm: FC<FormikProps<FormValues>> = ({
             />
           )}
         />
-        <Label isRequired>Select a table</Label>
-        <Tables
-          value={values[FIELD.TABLE]}
-          onClick={(val) => setFieldValue(FIELD.TABLE, val)}
-        />
-        {touched[FIELD.TABLE] && errors[FIELD.TABLE] && (
-          <Error message={errors[FIELD.TABLE] || ''} />
-        )}
+        <Spacer column verticalSpace={6}>
+          <Label isRequired>Select a table</Label>
+          <Tables
+            value={values[FIELD.TABLE]}
+            onClick={(val) => setFieldValue(FIELD.TABLE, val)}
+          />
+          {touched[FIELD.TABLE] && errors[FIELD.TABLE] && (
+            <Error message={errors[FIELD.TABLE] || ''} />
+          )}
+        </Spacer>
         <Button
           type="submit"
           disabled={isSubmitting}
@@ -81,7 +83,7 @@ export const BookTableForm = () => (
     }}
     validationSchema={Yup.object().shape({
       [FIELD.DATE]: Yup.string().required('Required'),
-      [FIELD.TABLE]: Yup.string().required('Required'),
+      [FIELD.TABLE]: Yup.string().required('A table must be selected!'),
     })}
     onSubmit={async (values, actions) => {
       actions.setSubmitting(true);
