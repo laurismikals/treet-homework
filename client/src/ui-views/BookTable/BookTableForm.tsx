@@ -90,7 +90,7 @@ export const BookTableForm = () => (
     onSubmit={async (values, actions) => {
       actions.setSubmitting(true);
 
-      makeToast.success('Congratulations, you clicked Next! Unfortunately it ends here. However, if you like what you have seen until now, call Lauris and let him know :)')
+      makeToast.success('Congratulations, you clicked Next! Unfortunately this is the end for now. But it doesn\'t have to be. If you like what you have seen until now, call Lauris and let him know :)')
 
       actions.setSubmitting(false);
     }}
