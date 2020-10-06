@@ -41,16 +41,18 @@ const InnerForm: FC<FormikProps<FormValues>> = ({
         <InputBatteries
           name={FIELD.DATE}
           required
-          label="Date"
+          label="Picka a date"
           input={(commonProps) => (
-            <InputDate
-              {...commonProps}
-              value={moment(values[FIELD.DATE])}
-              onChange={(val) => {
-                setFieldValue(FIELD.DATE, val.toISOString());
-                setFieldTouched(FIELD.DATE);
-              }}
-            />
+            <div style={{ maxWidth: 200 }}>
+              <InputDate
+                {...commonProps}
+                value={moment(values[FIELD.DATE])}
+                onChange={(val) => {
+                  setFieldValue(FIELD.DATE, val.toISOString());
+                  setFieldTouched(FIELD.DATE);
+                }}
+              />
+            </div>
           )}
         />
         <Spacer column verticalSpace={6}>
