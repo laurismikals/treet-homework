@@ -15,6 +15,8 @@ import { Button } from '../../ui-atoms/Button/Button';
 import { Error } from '../../ui-atoms/Error/Error';
 import { makeToast } from '../../ui-atoms/Toast/Toast';
 
+import { useAddOrder } from '../../queries/orders/useAddOrder';
+
 import { Tables } from './Tables';
 
 enum FIELD {
@@ -77,26 +79,38 @@ const InnerForm: FC<FormikProps<FormValues>> = ({
   );
 };
 
-export const BookTableForm = () => (
-  <Formik
-    initialValues={{
-      [FIELD.DATE]: moment().tz('Europe/Riga').endOf('day').toISOString(),
-      [FIELD.TABLE]: '',
-    }}
-    validationSchema={Yup.object().shape({
-      [FIELD.DATE]: Yup.string().required('Required'),
-      [FIELD.TABLE]: Yup.string().required('A table must be selected!'),
-    })}
-    onSubmit={async (values, actions) => {
-      actions.setSubmitting(true);
+export const BookTableForm = () => {
+  const [addOrder] = useAddOrder({
+    onSuccess: ({ table, date }) => {
+      makeToast.success(`You bookd Table ${table}. See you on ${moment(date).format('DD MMM')}`);
+    },
+    onError: (error) => makeToast.error(error.message),
+  });
 
-      makeToast.success('Congratulations, you clicked Next! Unfortunately this is the end for now. But it doesn\'t have to be. If you like what you have seen until now, call Lauris and let him know :)')
+  return (
+    <Formik
+      initialValues={{
+        [FIELD.DATE]: moment().tz('Europe/Riga').endOf('day').toISOString(),
+        [FIELD.TABLE]: '',
+      }}
+      validationSchema={Yup.object().shape({
+        [FIELD.DATE]: Yup.string().required('Required'),
+        [FIELD.TABLE]: Yup.string().required('A table must be selected!'),
+      })}
+      onSubmit={async (values, actions) => {
+        actions.setSubmitting(true);
 
-      actions.setSubmitting(false);
-    }}
-  >
-    {(formikProps) => (
-      <InnerForm {...formikProps} />
-    )}
-  </Formik>
-);
+        await addOrder({
+          date: values.date,
+          table: Number(values.table),
+        });
+
+        actions.setSubmitting(false);
+      }}
+    >
+      {(formikProps) => (
+        <InnerForm {...formikProps} />
+      )}
+    </Formik>
+  );
+};
