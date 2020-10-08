@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "npm run build && node dist/index.js",
-    "start:dev": "nodemon --exec ts-node --files index.ts",
+    "dev": "nodemon --exec ts-node --files index.ts",
     "build": "tsc -p .",
     "lint": "eslint . --ext .js --ext .ts",
     "lint:fix": "eslint . --ext .js --ext .ts --fix",
